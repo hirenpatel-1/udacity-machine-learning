@@ -8,8 +8,8 @@ numpy.random.seed(42)
 ### The words (features) and authors (labels), already largely processed.
 ### These files should have been created from the previous (Lesson 10)
 ### mini-project.
-words_file = "../text_learning/your_word_data.pkl" 
-authors_file = "../text_learning/your_email_authors.pkl"
+words_file = "../text_learning/word_data.pkl"
+authors_file = "../text_learning/email_authors.pkl"
 word_data = pickle.load( open(words_file, "r"))
 authors = pickle.load( open(authors_file, "r") )
 
@@ -41,15 +41,15 @@ labels_train   = labels_train[:150]
 from sklearn import tree
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(features_train, labels_train)
-
+print len(features_train)
 # find "signature words"
 for i, f in enumerate(clf.feature_importances_):
 	if f > 0.2:
-		print i 
-		print f 
-		print vectorizer.get_feature_names()[i]
+		print(i)
+		print (f)
+		print (vectorizer.get_feature_names()[i])
 
-print clf.score(features_test, labels_test)
+print (clf.score(features_test, labels_test))
 
 
 

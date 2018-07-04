@@ -34,4 +34,5 @@ features_train, features_test, labels_train, labels_test = cross_validation.trai
 from sklearn import tree
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(features_train, labels_train)
+
 print clf.score(features_test, labels_test)

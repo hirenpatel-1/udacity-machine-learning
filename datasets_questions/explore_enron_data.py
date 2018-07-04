@@ -21,7 +21,7 @@ enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r")
 
 total = 0
 count = 0
-
+print len(enron_data)
 for v in enron_data.itervalues():
 	if v["poi"]:
 		total += 1

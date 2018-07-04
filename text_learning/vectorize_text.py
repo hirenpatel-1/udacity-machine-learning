@@ -40,7 +40,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
     for path in from_person:
         ### only look at first 200 emails when developing
         ### once everything is working, remove this line to run over full dataset
-        path = os.path.join('..', path[:-1])
+        path = os.path.join('../../enron_mail_20150507/enron_mail_20150507', path[:-1])
         print path
         email = open(path, "r")
 
@@ -81,3 +81,4 @@ transformer = TfidfVectorizer(stop_words="english")
 tfidf = transformer.fit_transform(word_data)
 
 print transformer.get_feature_names()[34597]
+print len(transformer.get_feature_names())

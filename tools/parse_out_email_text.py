@@ -1,7 +1,6 @@
-#!/usr/bin/python
-
 from nltk.stem.snowball import SnowballStemmer
 import string
+
 
 def parseOutText(f):
     """ given an opened email file f, parse out all text below the
@@ -9,13 +8,12 @@ def parseOutText(f):
         (in Part 2, you will also add stemming capabilities)
         and return a string that contains all the words
         in the email (space-separated) 
-        
+
         example use case:
         f = open("email_file_name.txt", "r")
         text = parseOutText(f)
-        
-        """
 
+        """
 
     f.seek(0)  ### go back to beginning of file (annoying)
     all_text = f.read()
@@ -41,10 +39,9 @@ def parseOutText(f):
             s = stemmer.stem(w)
             if s:
                 answ.append(s.rstrip())
-    answ = ' '.join(answ) 
-    return answ 
- 
-    
+    answ = ' '.join(answ)
+    return answ
+
 
 def main():
     ff = open("../text_learning/test_email.txt", "r")
@@ -52,7 +49,5 @@ def main():
     print text
 
 
-
 if __name__ == '__main__':
     main()
-

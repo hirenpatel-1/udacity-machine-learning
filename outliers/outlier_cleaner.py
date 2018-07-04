@@ -22,9 +22,9 @@ def outlierCleaner(predictions, ages, net_worths):
 
     data.sort(key=lambda tup: tup[2])
     ### your code goes here
-#    print data
+    print data
 
-    cleaned_data = data[:81]
+    cleaned_data = data[:31]
 
     return cleaned_data
 
